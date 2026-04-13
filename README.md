@@ -9,4 +9,4 @@ Features in this project:
 1. Landing with form to fill and submit order for each product Page to run ads to make Millions 
 2. Order Receiveing in google Sheets
 3. Admin Panel to edit categories and products
-4. Deployed on high performance production server thaerefore is easy to load and takes less internet
+4. Deployed on high performance production server thaerefore easy to load and takes less internet
