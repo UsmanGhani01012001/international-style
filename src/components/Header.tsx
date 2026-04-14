@@ -1,8 +1,11 @@
-import { ShoppingBag, Menu, X } from "lucide-react";
+import { ShoppingBag, Menu, X, Settings } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { isAdmin } = useAuth();
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-gold">
@@ -23,6 +26,15 @@ const Header = () => {
           <a href="#products" className="text-foreground/70 hover:text-primary transition-colors">Products</a>
           <a href="#categories" className="text-foreground/70 hover:text-primary transition-colors">Categories</a>
           <a href="#contact" className="text-foreground/70 hover:text-primary transition-colors">Contact</a>
+          {isAdmin && (
+            <Link
+              to="/admin/dashboard"
+              className="flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
+            >
+              <Settings className="h-4 w-4" />
+              Admin
+            </Link>
+          )}
         </nav>
 
         <button className="md:hidden text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
@@ -35,6 +47,16 @@ const Header = () => {
           <a href="#products" className="text-foreground/70 hover:text-primary" onClick={() => setMenuOpen(false)}>Products</a>
           <a href="#categories" className="text-foreground/70 hover:text-primary" onClick={() => setMenuOpen(false)}>Categories</a>
           <a href="#contact" className="text-foreground/70 hover:text-primary" onClick={() => setMenuOpen(false)}>Contact</a>
+          {isAdmin && (
+            <Link
+              to="/admin/dashboard"
+              className="flex items-center gap-1.5 text-primary hover:text-primary/80"
+              onClick={() => setMenuOpen(false)}
+            >
+              <Settings className="h-4 w-4" />
+              Admin
+            </Link>
+          )}
         </nav>
       )}
     </header>
