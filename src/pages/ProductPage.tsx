@@ -11,7 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 
 type Product = Tables<"products">;
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxbe2k6jw5hTpw3y90GApIjRVz9CqY2ToT4syTmXSPgpelI-DLzP9bFGXnelnAjor_WcQ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHesjCRMrHYD2zEZ0mr5geNt2tlhq1JLtDczYHxvglXZrdPzrVJVRuCNdni4_TOSu-Ig/exec";
 
 const cities = [
   "Karachi", "Lahore", "Islamabad", "Rawalpindi", "Faisalabad", "Multan",
